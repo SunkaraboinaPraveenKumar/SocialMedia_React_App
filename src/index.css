@@ -1,0 +1,131 @@
+.nav_bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:7px;
+  background-color: blueviolet;
+}
+.left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  text-decoration: none;
+  color:white;
+}
+.left img{
+  width:10%;
+  border-radius: 100%;
+}
+.add_post{
+  width:750px;
+}
+.post_con{
+  width:800px;
+}
+.post_card{
+  width:800px;
+}
+.post_user{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap:1rem;
+  margin: 10px;
+}
+.post_user img{
+  width:6%;
+  border-radius: 100%;
+}
+.post_detail{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:2rem;
+}
+.post_detail_img img{
+  max-width: 450px;
+    border-radius: 5%;
+    width:350px;
+    height:350px;
+}
+.post_detail_user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  margin: 1rem;
+}
+.post_detail_user img{
+  width:7%;
+  border-radius: 100%;
+}
+.comments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comments input{
+  width:600px;
+}
+.comment_user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  margin: 10px;
+}
+.comment_user img{
+  width:5%;
+  border-radius: 100%;
+}
+.comment_con{
+  background-color: #3a1414;
+  padding: 5px;
+}
+.profie_user{
+  border-radius: 200%;
+  width:30%;
+}
+.all_users{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+.all_users img{
+  width:5%;
+  border-radius: 100%;
+}
+.all_users_con{
+  background-color: #3a1414;
+  padding:10px;
+  border-radius: 2%;
+}
+.register{
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width:768px){
+  .nav_bar{
+    flex-direction: column;
+  }
+  .post_con{
+    width:400px;
+  }
+  .post_card{
+    width:400px;
+  }
+  .all_users{
+    flex-direction: column;
+  }
+  .add_post{
+    width:400px;
+  }
+  .comment input{
+    width:300px;
+  }
+  .post_detail{
+    flex-direction: column;
+  }
+}
