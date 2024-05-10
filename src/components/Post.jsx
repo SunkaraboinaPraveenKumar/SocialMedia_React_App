@@ -70,14 +70,16 @@ const Post = ({ data, onPostDeleted }) => {
                   <small className="text-body-secondary">Time not available</small>
                 </p>
               )}
-              <Link to={`/post/${data.id}`} className="btn btn-info mx-3">
-                <h6>
-                  <FaCommentDots style={{ color: 'white' }} /> Comments
-                </h6>
-              </Link>
-              <Link to={`/post/${data.id}`} className="btn btn-warning mx-3">
-                <h6>View More</h6>
-              </Link>
+              <div className='comment-view'>
+                <Link to={`/post/${data.id}`} className="btn btn-info mx-3">
+                  <h6>
+                    <FaCommentDots style={{ color: 'white' }} /> Comments
+                  </h6>
+                </Link>
+                <Link to={`/post/${data.id}`} className="btn btn-warning mx-3">
+                  <h6>View More</h6>
+                </Link>
+              </div>
               {location.pathname === '/profile' && (
                 <button
                   className="btn btn-danger"

@@ -107,10 +107,11 @@ const Navbar = () => {
               </button>
             </>
           )}
-
+          <div className='all-users'>
           <Link to='/users' className='btn btn-warning mx-3'>
             All Users
           </Link>
+          </div>
         </div>
       </div>
     </>

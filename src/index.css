@@ -68,6 +68,9 @@
 .comments input{
   width:600px;
 }
+.all-users{
+  margin-top: 10px;
+}
 .comment_user{
   display: flex;
   justify-content: center;
@@ -127,5 +130,112 @@
   }
   .post_detail{
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 328px) {
+  .nav_bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+  }
+
+  .left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .left img {
+    width: 30%; /* Larger for visibility on small screens */
+  }
+
+  .add_post,
+  .post_con,
+  .post_card {
+    width: 100%; /* Full-width on narrow screens */
+  }
+
+  .post_user {
+    flex-direction: column;
+    align-items: flex-start; /* Aligning for small screens */
+    gap: 0.5rem;
+  }
+
+  .post_user img {
+    width: 15%; /* Larger for visibility */
+  }
+
+  .post_detail {
+    flex-direction: column; /* Vertical layout for smaller screens */
+    gap: 1rem; /* Add gap for proper spacing */
+  }
+
+  .post_detail_img img {
+    width: 90%; /* Allow for some padding/margin */
+  }
+
+  .post_detail_user {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem; /* Add gap for spacing */
+  }
+
+  .post_detail_user img {
+    width: 10%; /* Larger for clarity */
+  }
+
+  .comments {
+    flex-direction: column;
+    align-items: flex-start; /* Stacked input */
+    gap: 0.5rem; /* Add gap for spacing */
+  }
+
+  .comments input {
+    width: 90%; /* Smaller width for extra padding */
+  }
+
+  .comment_user {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem; /* Add gap for spacing */
+  }
+
+  .comment_user img {
+    width: 10%; /* Larger for clarity */
+  }
+
+  .comment_con {
+    padding: 10px; /* Increase padding for better touch interaction */
+  }
+
+  .profie_user {
+    width: 50%; /* Adjust for smaller screens */
+  }
+
+  .all_users {
+    flex-direction: column; /* Stacked on small screens */
+    align-items: flex-start;
+    gap: 0.5rem; /* Add gap to prevent crowding */
+  }
+  .all-users{
+    margin-top: 10px;
+  }
+  .all_users img {
+    width: 10%; /* Larger for small screens */
+  }
+
+  .all_users_con {
+    padding: 15px; /* Increased padding for touch interaction */
+  }
+.comment-view{
+  display: flex;
+  gap:5px;
+  margin-bottom: 8px;
+}
+  .register {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Increase padding for smaller screens */
+    gap: 1rem; /* Add gap for proper spacing */
   }
 }
