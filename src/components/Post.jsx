@@ -22,7 +22,6 @@ const Post = ({ data, onPostDeleted }) => {
               const deleteData = doc(db, 'post', id);
               await deleteDoc(deleteData);
 
-              // If provided, call a callback function after successful deletion
               if (onPostDeleted) {
                 onPostDeleted(id);
               }
@@ -39,6 +38,9 @@ const Post = ({ data, onPostDeleted }) => {
     });
   };
 
+  // Null check before accessing `seconds` and `nanoseconds`
+  const hasValidTime = data.time && data.time.seconds != null && data.time.nanoseconds != null;
+
   return (
     <div className="container post_con my-5">
       <div className="post_user">
@@ -54,11 +56,20 @@ const Post = ({ data, onPostDeleted }) => {
             <div className="card-body text-center text-light">
               <h3 className="card-title">{data.title}</h3>
               <h6 className="card-text">{data.description}</h6>
-              <p className="card-text">
-                <small className="text-body-secondary">
-                  <ConvertDateTime seconds={data.time.seconds} nanoseconds={data.time.nanoseconds} />
-                </small>
-              </p>
+              {hasValidTime ? (
+                <p className="card-text">
+                  <small className="text-body-secondary">
+                    <ConvertDateTime
+                      seconds={data.time.seconds}
+                      nanoseconds={data.time.nanoseconds}
+                    />
+                  </small>
+                </p>
+              ) : (
+                <p className="card-text">
+                  <small className="text-body-secondary">Time not available</small>
+                </p>
+              )}
               <Link to={`/post/${data.id}`} className="btn btn-info mx-3">
                 <h6>
                   <FaCommentDots style={{ color: 'white' }} /> Comments
@@ -68,7 +79,10 @@ const Post = ({ data, onPostDeleted }) => {
                 <h6>View More</h6>
               </Link>
               {location.pathname === '/profile' && (
-                <button className="btn btn-danger" onClick={() => deletePost(data.id)}>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deletePost(data.id)}
+                >
                   <h6>Delete</h6>
                 </button>
               )}

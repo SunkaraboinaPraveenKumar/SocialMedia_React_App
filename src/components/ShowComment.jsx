@@ -12,17 +12,20 @@ const ShowComment = ({ comment }) => {
         )}
         <h3>{comment.author || 'Anonymous'}</h3>
       </div>
-      {comment.time && (
+      {comment.time && comment.time.seconds !== undefined && comment.time.nanoseconds !== undefined ? (
         <div className="comment_time">
           <ConvertDateTime
             seconds={comment.time.seconds}
             nanoseconds={comment.time.nanoseconds}
           />
         </div>
+      ) : (
+        <div className="comment_time">Time not available</div> // If `comment.time` is not valid
       )}
       <p>{comment.message || 'No comment provided'}</p>
     </div>
   );
 };
+
 
 export default ShowComment;

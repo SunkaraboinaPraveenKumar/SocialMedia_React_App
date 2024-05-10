@@ -1,12 +1,10 @@
-import React from 'react';
-
 const ConvertDateTime = ({ seconds, nanoseconds }) => {
+  if (seconds == null || nanoseconds == null) {
+    return <span>Time not available</span>; // Handle undefined time
+  }
+
   const time = seconds * 1000 + nanoseconds / 1e6;
   const date = new Date(time);
-
-  // Convert to IST
-  date.setUTCHours(date.getUTCHours());
-  date.setUTCMinutes(date.getUTCMinutes());
 
   const formattedDate = date.toLocaleDateString("en-IN", {
     year: 'numeric',
@@ -14,7 +12,7 @@ const ConvertDateTime = ({ seconds, nanoseconds }) => {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    second: 'numeric',
+    seconds: 'numeric',
     timeZoneName: 'short',
   });
 
